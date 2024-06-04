@@ -1,0 +1,30 @@
+@use "../../../styles/abstracts" as *;
+
+.button {
+  position: relative;
+  padding: 0.5rem;
+  line-height: 1;
+  width: 100%;
+  border: 1px solid transparent;
+  color: $cl-secondary;
+  background: none;
+  display: inline-block;
+  font-weight: $fw-bold;
+  cursor: pointer;
+}
+
+.secondary {
+  border: 1px solid $cl-red;
+  border-radius: 8px;
+}
+
+.primary {
+  border-radius: 8px;
+}
+
+.primary:hover {
+  background: #f5f4f4;
+}
+
+
+

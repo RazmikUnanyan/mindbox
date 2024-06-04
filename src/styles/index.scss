@@ -1,0 +1,30 @@
+@use "./abstracts" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body, html {
+  font-family: $ff-primary;
+}
+
+h1 {
+  color: $cl-title;
+  font-size: $fs-h1;
+  font-weight: $fw-semiBold;
+  line-height: 29.26px;
+}
+
+h2 {
+  color: $cl-title;
+  font-size: $fs-h2;
+  font-weight: $fw-secondary;
+  line-height: 21.94px;
+}
