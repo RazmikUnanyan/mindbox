@@ -1,4 +1,4 @@
-@use "../../../styles/abstracts" as *;
+@use "../../styles/abstracts/index" as *;
 
 .button {
   position: relative;
@@ -20,10 +20,10 @@
 
 .primary {
   border-radius: 8px;
-}
 
-.primary:hover {
-  background: #f5f4f4;
+  &:hover {
+    background: #f5f4f4;
+  }
 }
 
 

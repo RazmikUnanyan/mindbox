@@ -1,7 +1,9 @@
 import {DetailedHTMLProps, HTMLAttributes} from "react";
+import {Status} from "../../../interfaces";
 
-export interface ITodosHeaderProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
-    value: string;
-    onSetLabel: any;
-    onAddTaskClick: any;
+export interface ITodosFooterProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
+    tasksCount?: number;
+    currentFilter: string;
+    onSetCurrentFilter: (filter: Status) => void;
+    onClear: () => void
 }

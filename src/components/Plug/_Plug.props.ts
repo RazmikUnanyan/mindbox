@@ -1,11 +1,5 @@
-import React from 'react';
+import {DetailedHTMLProps, HTMLAttributes} from "react";
 
-const Plug = ({ title, ...props}) => {
-    return (
-        <div {...props}>
-            {title}
-        </div>
-    );
-};
-
-export default Plug;
+export interface IPlugProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    title: string
+}

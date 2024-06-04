@@ -1,15 +1,21 @@
-import React, {FC} from 'react';
-import {ITodosHeaderProps } from "./_TodosHeader.props";
+import React, {FC, memo} from 'react';
+import {ITodosFooterProps} from "./_TodosFooter.props";
 
-import styles from "./_TodosHeader.module.scss";
-import {Input} from "../../../ui";
+import styles from "./_TodosFooter.module.scss";
+import {Button, Input} from "../../../ui";
+import {FILTERS} from "../../../constants";
 
-export const TodosHeader:FC<ITodosHeaderProps> = ({ value, onSetLabel, onAddTaskClick}) => (
-    <header className={styles.header}>
-        <Input placeholder="Waht needs to be done?"
-               value={value}
-               onChange={onSetLabel}
-               onKeyPress={onAddTaskClick}
-        />
-    </header>
-    );
+export const TodosFooter: FC<ITodosFooterProps> = memo(({onClear, onSetCurrentFilter, currentFilter, tasksCount = 0, ...props}) => (
+    <footer className={styles.footer} {...props}>
+        <div className={styles.counter}>{`${tasksCount} items left`}</div>
+        <div className={styles.filters}>
+            {FILTERS.map((filter) => (
+                <Button onClick={() => onSetCurrentFilter(filter.name)}
+                        variant={filter.name === currentFilter ? "secondary" : "primary"}>
+                    {filter.name}
+                </Button>
+            ))}
+        </div>
+        <div className={styles.clear}><Button onClick={onClear}>Clear completed</Button></div>
+    </footer>
+));

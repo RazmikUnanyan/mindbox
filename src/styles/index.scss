@@ -13,18 +13,12 @@ html:focus-within {
 
 body, html {
   font-family: $ff-primary;
+  background-color: $cl-background;
 }
 
 h1 {
-  color: $cl-title;
-  font-size: $fs-h1;
-  font-weight: $fw-semiBold;
-  line-height: 29.26px;
+  color: $cl-red;
+  font-size: $fs-primary;
+  font-weight: $fw-primary;
 }
 
-h2 {
-  color: $cl-title;
-  font-size: $fs-h2;
-  font-weight: $fw-secondary;
-  line-height: 21.94px;
-}
