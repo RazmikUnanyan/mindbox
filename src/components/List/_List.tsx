@@ -1,10 +1,16 @@
-import React, {FC} from 'react';
-import {IListProps} from "./_List.props";
+import React, {ChangeEvent, FC} from 'react';
 import {Input} from "../../ui";
 import {Plug} from "../Plug";
 import {PLUGS} from "../../constants";
+import {ITask, Status} from "../../interfaces";
 
 import styles from './_List.module.scss';
+
+export interface IListProps  {
+    tasks: ITask[] | null;
+    filter: Status;
+    onHandleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
 
 export const List: FC<IListProps> = ({onHandleChange, filter, tasks, ...props}) => {
 

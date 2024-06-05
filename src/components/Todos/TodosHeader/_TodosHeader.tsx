@@ -11,7 +11,8 @@ export interface ITodosHeaderProps {
 
 export const TodosHeader: FC<ITodosHeaderProps> = ({value, onSetLabel, onAddTaskClick }) => (
     <header className={styles.header}>
-        <Input placeholder="Waht needs to be done?"
+        <Input data-testid="input-task"
+               placeholder="What needs to be done?"
                value={value}
                onChange={onSetLabel}
                onKeyDown={onAddTaskClick}

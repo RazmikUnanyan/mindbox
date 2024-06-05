@@ -17,12 +17,17 @@ export const TodosFooter: FC<ITodosFooterProps> = memo(({onClear, onSetCurrentFi
         <div className={styles.counter}>{`${tasksCount} items left`}</div>
         <div className={styles.filters}>
             {FILTERS.map((filter) => (
-                <Button onClick={() => onSetCurrentFilter(filter.name)}
+                <Button key={filter.name }
+                        onClick={() => onSetCurrentFilter(filter.name)}
                         variant={filter.name === currentFilter ? "secondary" : "primary"}>
                     {filter.name}
                 </Button>
             ))}
         </div>
-        <div className={styles.clear}><Button onClick={onClear}>Clear completed</Button></div>
+        <div className={styles.clear}>
+            <Button data-testid="clear" onClick={onClear}>
+                Clear completed
+            </Button>
+        </div>
     </footer>
 ));
