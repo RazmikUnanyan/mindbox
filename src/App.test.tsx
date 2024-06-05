@@ -7,9 +7,9 @@ test('add a task', () => {
   const inputElement = screen.getByPlaceholderText('What needs to be done?');
   const taskText = 'Новая задача';
 
-  // Вводим текст
+  // Вводим название задачи
   fireEvent.change(inputElement, { target: { value: taskText } });
-  // Наживаем "Enter"
+  // Добавляем задачу
   fireEvent.keyDown(inputElement, { key: 'Enter', code: 13, charCode: 13 });
 
   const taskElement = screen.getByText(taskText) as HTMLInputElement;
