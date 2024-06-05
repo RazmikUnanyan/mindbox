@@ -9,6 +9,7 @@ test('add a task and clear', () => {
 
   // Вводим название задачи
   fireEvent.change(inputElement, { target: { value: taskText } });
+
   // Добавляем задачу
   fireEvent.keyDown(inputElement, { key: 'Enter', code: 13, charCode: 13 });
 
