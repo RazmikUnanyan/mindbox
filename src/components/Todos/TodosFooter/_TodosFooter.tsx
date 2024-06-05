@@ -1,12 +1,19 @@
-import React, {FC, memo} from 'react';
-import {ITodosFooterProps} from "./_TodosFooter.props";
+import React, { FC, memo} from 'react';
+import {Button} from "../../../ui";
+import {FILTERS} from "../../../constants";
+import {Status} from "../../../interfaces";
 
 import styles from "./_TodosFooter.module.scss";
-import {Button, Input} from "../../../ui";
-import {FILTERS} from "../../../constants";
 
-export const TodosFooter: FC<ITodosFooterProps> = memo(({onClear, onSetCurrentFilter, currentFilter, tasksCount = 0, ...props}) => (
-    <footer className={styles.footer} {...props}>
+export interface ITodosFooterProps {
+    tasksCount?: number;
+    currentFilter: string;
+    onSetCurrentFilter: (filter: Status) => void;
+    onClear: () => void
+}
+
+export const TodosFooter: FC<ITodosFooterProps> = memo(({onClear, onSetCurrentFilter, currentFilter, tasksCount = 0}) => (
+    <footer className={styles.footer}>
         <div className={styles.counter}>{`${tasksCount} items left`}</div>
         <div className={styles.filters}>
             {FILTERS.map((filter) => (

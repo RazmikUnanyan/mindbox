@@ -15,7 +15,7 @@ export const List: FC<IListProps> = ({onHandleChange, filter, tasks, ...props}) 
         <div className={styles.list} {...props}>
             {showPlug && <Plug title={PLUGS[filter]}/>}
             {filterTasks?.map((task) => (
-                <div key={task.id} className={styles.checkbox}>
+                <div key={task.id} className={styles.checkboxContainer}>
                     <Input onChange={onHandleChange}
                            name={task?.label}
                            type="checkbox"
