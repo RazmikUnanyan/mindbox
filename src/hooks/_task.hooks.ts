@@ -11,6 +11,7 @@ import {ITask, ITasksData, ITasksHandlers, State, Status} from "../interfaces";
  * @returns {State<Status>} return.filterState Текущий фильтр задач.
  * @returns {number} return.activeTasksCount Количество активных задач.
  */
+
 export const useTasksData = (): ITasksData => {
     const tasksState = useState<ITask[] | []>([])
     const todoCreationInputValueState = useState("");
