@@ -21,6 +21,7 @@ export const Todos: FC<ITodosProps> = ({...props}) => {
         if (event.key === "Enter") {
             const newTask: ITask = {id: Math.random(), label: label, status: "Active"};
             setTasks((state) => [...state, newTask]);
+            setCurrentFilter("All");
             setLabel("");
         }
     }, [label]);
