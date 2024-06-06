@@ -1,3 +1,7 @@
-import {IFilters} from "../interfaces";
+import { IFilters } from "../interfaces";
 
-export const FILTERS: IFilters[] = [{id: 1, name: "All"}, {id: 2, name: "Active"}, {id: 3, name: "Completed"}]
+export const FILTERS: IFilters[] = [
+  { id: 1, name: "All" },
+  { id: 2, name: "Active" },
+  { id: 3, name: "Completed" },
+];
